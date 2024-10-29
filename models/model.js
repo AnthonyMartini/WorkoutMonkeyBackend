@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
 
 const dataSchema = new mongoose.Schema({
-    name: {
+    Name: {
         required: true,
         type: String
     },
-    age: {
+    Notes: {
         required: true,
-        type: Number
+        type: String
     }
 })
 
-module.exports = mongoose.model('Data', dataSchema)
+
+module.exports = mongoose.model('Exercise', dataSchema)

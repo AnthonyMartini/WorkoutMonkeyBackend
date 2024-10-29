@@ -22,8 +22,15 @@ router.post('/post', async (req, res) => {
     }
 })
 //Get all Method
-router.get('/getAll', (req, res) => {
-    res.send('Get All API')
+router.get('/getWorkouts', async (req, res) => {
+    try {
+        const dataToSave = await Model.find({});
+        res.status(200).json(dataToSave);
+    }
+    catch (error) {
+        res.status(400).json({ message: error.message })
+    }
+
 })
 
 //Get by ID Method
